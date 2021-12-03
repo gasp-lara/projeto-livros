@@ -16,6 +16,9 @@ class Cliente(models.Model):
     dt_nasc = models.DateField
     dt_cadastro = models.DateField
 
+    def _str_(self):
+        return self.nome + ' - ' + str(self.email) + ' - ' + str(self.senha) + ' - ' + str(self.cep) + ' - ' + str(self.endereco) + ' - ' + str(self.numero) + ' - ' + str(self.bairro) + ' - ' + str(self.cidade) + ' - ' + str(self.estado) + ' - ' +  str(self.dt_nasc) + ' - ' +   str(self.dt_cadastro)
+
 
 class Livro(models.Model):
 # usuario = Cliente
@@ -31,17 +34,29 @@ class Livro(models.Model):
     valor = models.FloatField
 # categoria = Categoria 
 
+    def _str_(self):
+        return self.titulo + ' - ' + str(self.autor) + ' - ' + str(self.editora) + ' - ' + str(self.descricao) + ' - ' + str(self.dt_cadastro) + ' - ' + str(self.foto) + ' - ' + str(self.ano_pub) + ' - ' + str(self.adicionar) + ' - ' + str(self.vendido) + ' - ' +  str(self.valor) + ' - ' +   str(self.categoria)
 
 class Venda (models.Model):
     data_venda = models.DateField
     cliente = models.CharField(max_length=50)
     valor = FloatField
 
+    def _str_(self): 
+        return self.data_venda + ' - ' + str(self.cliente) + ' - ' + str(self.valor)
+
+
 class Categoria (models.Model):
     nome = models.CharField(max_length=50)
 
+    def _str_(self): 
+        return self.nome
+
 class FormaDePagamento (models.Model):
      descricao = models.CharField(max_length=50)
+
+     def _str_(self): 
+        return self.descricao
 
 
 
