@@ -1,3 +1,4 @@
+from msilib.schema import ListView
 from django.db.models import fields
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -105,3 +106,25 @@ class FormaDePagamentoDelete(DeleteView):
     model = FormaDePagamento
     template_name = "cadastros/form-excluir.html"
     success_url = reverse_lazy("index")
+
+##Listar
+
+class ClienteList(ListView):
+    model = Cliente
+    template_name = "cadastros/listas/cliente.html"
+
+class LivroList(ListView):
+    model = Livro
+    template_name = "cadastros/listas/livro.html"
+
+class VendaList(ListView):
+    model = Venda
+    template_name = "cadastros/listas/venda.html"
+
+class CategoriaList(ListView):
+    model = Categoria
+    template_name = "cadastros/listas/categoria.html"
+
+class FormaDePagamentoList(ListView):
+    model = FormaDePagamento
+    template_name = "cadastros/listas/formaDePagamento.html"
