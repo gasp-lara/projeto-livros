@@ -5,15 +5,15 @@
 {% load crispy_forms_tags %}
 
 {% block titulo %}
-<title>Excluir</title>
+<title>Usuarios</title>
 
 <form action="" nethod="POST">
     {% csrf_token %}
 
     {{ form|crisp }}
 
-    <button type="submit" class="btn btn-light mt-3">Excluir</button>
-
+    <button type="submit" class="btn btn-light mt-3">Autenticação</button>
+  
 </form>
 
 {% endblock %}
